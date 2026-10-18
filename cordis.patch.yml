@@ -1,0 +1,16 @@
+# dsh-mobile-adapt 的 bundle 层：只做一件事——把服务端半挂进插件树。
+#
+# 客户端半由本包 package.json 的 `dsh.client` 声明自动发现：宿主扫描 loader 行时
+# 找到这个包，就把 lib/client.js 编进浏览器模块图，这里不需要再写一行。
+#
+# ⚠ 不要再在 profile 的 cordis.patch.yml 里 insert 同一个 id。本包一旦进了
+# `dsh.profile.bundles`，这一行就已经 insert 过一次；再 insert 一次就是
+# `duplicate loader entry id: mobile-adapt`，`dsh web` 启动直接失败、systemd
+# 无限重启、GUI 打不开（本 profile 因同一类错误挂过两次，见 audit/dsh-plugin-audit.md）。
+# 要改这一行的配置，用 patch 语义指向已有行：
+#
+#   - id: mobile-adapt      # 不写 insert
+#     config: { ... }       # 注意 config 是整行替换，要写完整
+- insert:
+    - id: mobile-adapt
+      name: dsh-mobile-adapt

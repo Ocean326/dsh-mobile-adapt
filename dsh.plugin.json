@@ -1,0 +1,12 @@
+{
+  "name": "dsh-mobile-adapt",
+  "description": "移动端双浮动入口：经典会话栏 / DS Bots 栏；共享抽屉、拖动贴边、历史会话导航、手机返回与输入框适配",
+  "version": "0.5.3",
+  "entry": {
+    "name": "dsh-mobile-adapt",
+    "inject": []
+  },
+  "client": {
+    "platform": "web"
+  }
+}

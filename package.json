@@ -1,0 +1,66 @@
+{
+  "name": "@ocean326/dsh-mobile-adapt",
+  "description": "移动端适配：双浮动入口切换经典会话列表与 DS Bots，按钮组拖动贴边、抽屉复用、会话导航自动收起、主题及移动端输入布局优化",
+  "version": "0.5.3",
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json",
+    "./cordis.patch.yml": "./cordis.patch.yml"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "cordis.patch.yml",
+    "dsh.plugin.json",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "check": "node --check lib/index.js && node --check lib/client.js"
+  },
+  "author": {
+    "name": "Ocean326",
+    "url": "https://github.com/Ocean326"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "dsh-client-plugin",
+    "mobile",
+    "touch",
+    "responsive",
+    "web",
+    "sidebar",
+    "drawer"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ocean326/dsh-mobile-adapt.git"
+  },
+  "homepage": "https://github.com/Ocean326/dsh-mobile-adapt#readme",
+  "bugs": {
+    "url": "https://github.com/Ocean326/dsh-mobile-adapt/issues"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "~4.0.5-alpha.1",
+    "@deepseek-ai/dsh-client-ui-layout": "^0.2.1-alpha.1",
+    "@deepseek-ai/dsh-api-session-controller": "^0.2.1-alpha.1"
+  }
+}
